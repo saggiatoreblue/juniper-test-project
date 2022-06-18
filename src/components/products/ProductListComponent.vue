@@ -7,9 +7,10 @@
           :key="product.ProductID"
           class="col-lg-3 col-md-6 col-12"
         >
-          <div class="product-img-container">
+          <div class="product-img-container" @click="toggleDetails">
             <div class="product-img-wrap">
               <img
+                :id="product.ProductID"
                 class="product-image"
                 :src="`${product.PhotoName}?width=250&height=250&mode=canvas&anchor=middlecenter`"
               />
@@ -26,9 +27,22 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "ProductListComponent",
+
+  data() {
+    return {
+      selectedProductId: "",
+    };
+  },
+
   computed: {
     products() {
       return this.$store.state.products;
+    },
+  },
+  methods: {
+    toggleDetails(e) {
+      console.log(this.selectedProductId);
+      this.selectedProductId = e.target.id;
     },
   },
 });
@@ -51,6 +65,7 @@ export default Vue.extend({
   background: white;
   cursor: pointer;
 }
+
 .product-img-wrap {
   overflow: hidden;
   width: 240px;

@@ -22,8 +22,10 @@ export default Vue.extend({
 #header-component {
   padding: 0.5rem;
   border-bottom: 1px solid $grey-color;
-  margin-bottom: 1.5rem;
   position: sticky;
   background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 </style>

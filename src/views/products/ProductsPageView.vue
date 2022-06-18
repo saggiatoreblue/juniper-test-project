@@ -1,6 +1,7 @@
 <template>
-  <div class="products">
+  <div class="products-view">
     <product-list-component />
+    <product-details-component />
   </div>
 </template>
 
@@ -8,10 +9,12 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "HomeView",
+  name: "ProductsPageView",
   components: {
     ProductListComponent: () =>
       import("@/components/products/ProductListComponent.vue"),
+    ProductDetailsComponent: () =>
+      import("@/components/products/ProductDetailsComponent.vue"),
   },
 });
 </script>

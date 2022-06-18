@@ -24,6 +24,8 @@ export default Vue.extend({
   font-size: 0.8rem;
   background: white;
   width: 100%;
-  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  color: $secondary-color;
 }
 </style>
