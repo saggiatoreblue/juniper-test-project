@@ -1,5 +1,5 @@
 export class SalesRep {
-  salesRepId: number;
+  salesRepID: number;
   companyName: string;
   firstName: string;
   lastName: string;
@@ -12,7 +12,7 @@ export class SalesRep {
   postalCode: string;
 
   constructor(
-    salesRepId: number,
+    salesRepID: number,
     companyName: string,
     firstName: string,
     lastName: string,
@@ -24,7 +24,7 @@ export class SalesRep {
     state: string,
     postalCode: string
   ) {
-    this.salesRepId = salesRepId;
+    this.salesRepID = salesRepID;
     this.companyName = companyName;
     this.firstName = firstName;
     this.lastName = lastName;
