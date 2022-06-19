@@ -41,5 +41,9 @@ export default Vue.extend({
     text-decoration: none;
     color: $secondary-color;
   }
+  .small-txt {
+    position: relative;
+    top: -0.6rem;
+  }
 }
 </style>
