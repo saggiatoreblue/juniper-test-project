@@ -123,7 +123,7 @@ export default Vue.extend({
   border-left: 1px solid $grey-color;
   @include box-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.2), false);
   transition: right 0.5s ease;
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
   &.open {

@@ -17,7 +17,7 @@ export default abstract class StringHelper {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  public static toTitleCasing(str: any): string {
+  public static toTitleCasing(str: string): string {
     let formattedString = this.upperCaseFirstChar(str);
     const lastChar = formattedString.charAt(formattedString.length - 1);
     const checkChar = lastChar === lastChar.toUpperCase() ? true : false;

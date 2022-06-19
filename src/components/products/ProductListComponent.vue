@@ -5,7 +5,7 @@
         <li
           v-for="product in products"
           :key="product.ProductID"
-          class="col-lg-3 col-md-6 col-12"
+          class="col-lg-3 col-sm-6 col-12"
         >
           <div class="product-img-container" @click="toggleDetails">
             <div class="product-img-wrap" :id="product.ProductID">
