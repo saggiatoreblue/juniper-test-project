@@ -43,7 +43,7 @@ export default Vue.extend({
   methods: {
     ...mapActions(["setToggleDetails", "setSelectedProductId"]),
 
-    toggleDetails(e: any): void {
+    toggleDetails(e): void {
       const details = document.getElementById("product-details");
       document.querySelectorAll(".product-img-wrap").forEach((el) => {
         if (el.id !== e.target.id) el.classList.remove("active");

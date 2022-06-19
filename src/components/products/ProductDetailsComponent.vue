@@ -88,9 +88,7 @@ export default Vue.extend({
 
   watch: {
     selectedProductId(v: string) {
-      const product = this.products.find(
-        (product: any) => product.ProductID === +v
-      );
+      const product = this.products.find((product) => product.ProductID === +v);
       this.productDetails = new ProductDetails(
         product.ItemID,
         product.ItemName,

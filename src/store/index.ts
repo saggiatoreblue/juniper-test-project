@@ -31,7 +31,7 @@ export default new Vuex.Store({
     getSalesRep: (state: GlobalState): object => state.salesRep,
   },
   mutations: {
-    SET_PROP(state: any, [key, value]): void {
+    SET_PROP(state: GlobalState, [key, value]): void {
       state[key] = value;
     },
   },
@@ -40,7 +40,7 @@ export default new Vuex.Store({
       commit("SET_PROP", ["toggleDetails", !state.toggleDetails]);
     },
 
-    setSelectedProductId({ state, commit }, id: string): void {
+    setSelectedProductId({ commit }, id: string): void {
       commit("SET_PROP", ["selectedProductId", id]);
     },
   },
