@@ -27,5 +27,6 @@ export default Vue.extend({
   position: fixed;
   bottom: 0;
   color: $secondary-color;
+  @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.1));
 }
 </style>
