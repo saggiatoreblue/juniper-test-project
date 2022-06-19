@@ -20,7 +20,7 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 97px);
+  height: calc(100vh - 207px);
   h1 {
     font-size: 48px;
     color: rgb(137, 12, 12);
