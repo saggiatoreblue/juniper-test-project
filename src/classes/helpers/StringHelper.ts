@@ -24,7 +24,6 @@ export default abstract class StringHelper {
     if (checkChar) {
       formattedString = formattedString.slice(0, -1);
     }
-
     formattedString = formattedString.replace(/([A-Z])/g, " $1");
     if (checkChar) formattedString = formattedString + lastChar;
     return formattedString;
@@ -36,5 +35,14 @@ export default abstract class StringHelper {
       style: "currency",
       currency: "USD",
     });
+  }
+
+  public static convertToPhoneNumber(str: string): string {
+    const cleaned = ("" + str).replace(/\D/g, "");
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return "(" + match[1] + ") " + match[2] + "-" + match[3];
+    }
+    return "";
   }
 }

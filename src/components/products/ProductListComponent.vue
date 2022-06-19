@@ -108,10 +108,10 @@ export default Vue.extend({
   &:hover,
   &.active {
     img {
-      filter: sepia(100%);
+      filter: sepia(50%);
     }
     &:after {
-      opacity: 0.5;
+      opacity: 0.2;
     }
   }
 }
