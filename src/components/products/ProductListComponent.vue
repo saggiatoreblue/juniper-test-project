@@ -45,6 +45,10 @@ export default Vue.extend({
 
     toggleDetails(e: any): void {
       const details = document.getElementById("product-details");
+      document.querySelectorAll(".product-img-wrap").forEach((el) => {
+        if (el.id !== e.target.id) el.classList.remove("active");
+      });
+      e.target.classList.toggle("active");
       this.setSelectedProductId(e.target.id);
       if (
         this.selectedProduct.id !== e.target.id &&
@@ -67,6 +71,7 @@ export default Vue.extend({
   max-width: 1280px;
   margin: auto;
   padding: 1rem;
+  min-width: 340px;
 }
 
 .product-img-container {
@@ -95,12 +100,16 @@ export default Vue.extend({
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(252, 197, 27, 0.3);
+    background: rgba(252, 197, 27, 0.5);
     opacity: 0;
     content: "";
-    transition: opacity 0.8s ease;
+    transition: all 0.3s ease;
   }
-  &:hover {
+  &:hover,
+  &.active {
+    img {
+      filter: sepia(100%);
+    }
     &:after {
       opacity: 0.5;
     }

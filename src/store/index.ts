@@ -5,13 +5,13 @@ import products from "./products.json";
 import store from "./store.json";
 
 Vue.use(Vuex);
-/* eslint-disable */
 interface GlobalState {
   products: object[];
   companyDetails: object;
   manufacturerId: string;
   toggleDetails: boolean;
   selectedProductId: string;
+  salesRep: object;
 }
 
 export default new Vuex.Store({
@@ -21,12 +21,14 @@ export default new Vuex.Store({
     manufacturerId: store.ManufacturerID,
     toggleDetails: false,
     selectedProductId: "",
+    salesRep: store.SalesRep,
   },
   getters: {
     getProducts: (state: GlobalState): object[] => state.products,
     getManufacturerId: (state: GlobalState): string => state.manufacturerId,
     getCompanyDetails: (state: GlobalState): object => state.companyDetails,
     getToggleDetails: (state: GlobalState): boolean => state.toggleDetails,
+    getSalesRep: (state: GlobalState): object => state.salesRep,
   },
   mutations: {
     SET_PROP(state: any, [key, value]): void {

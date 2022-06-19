@@ -27,5 +27,6 @@ export default Vue.extend({
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9;
 }
 </style>
