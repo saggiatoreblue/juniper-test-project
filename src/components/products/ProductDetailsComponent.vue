@@ -102,6 +102,11 @@ export default Vue.extend({
   methods: {
     ...mapActions(["setToggleDetails"]),
     onCloseDetails() {
+      const els = document
+        .querySelectorAll(".product-img-wrap")
+        .forEach((element) => {
+          element.classList.remove("active");
+        });
       this.setToggleDetails();
     },
   },
