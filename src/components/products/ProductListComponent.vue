@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapGetters } from "vuex";
 
 export default Vue.extend({
   name: "ProductListComponent",
@@ -34,19 +35,23 @@ export default Vue.extend({
   },
 
   computed: {
-    products() {
-      return this.$store.state.products;
+    ...mapGetters(["getProducts"]),
+    products(): object[] {
+      return this.getProducts;
     },
   },
 
   methods: {
     toggleDetails(e): void {
       const details = document.getElementById("product-details");
+
       document.querySelectorAll(".product-img-wrap").forEach((el) => {
         if (el.id !== e.target.id) el.classList.remove("active");
       });
+
       e.target.classList.toggle("active");
       this.$store.dispatch("setSelectedProductId", e.target.id);
+
       if (
         this.selectedProduct.id !== e.target.id &&
         details &&

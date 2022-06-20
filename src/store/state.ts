@@ -1,4 +1,4 @@
-import data from "./data.json";
+import data from "./mockData/data.json";
 
 export default {
   products: data.items,

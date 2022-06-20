@@ -1,5 +1,5 @@
-import products from "./_products";
-import accessDenied from "./_40x";
+import products from "./products";
+import accessDenied from "./40x";
 
 export default [
   {
