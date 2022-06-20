@@ -124,7 +124,7 @@ export default Vue.extend({
   z-index: 9;
   padding: 0 1.5rem 1rem;
   border-left: 1px solid $grey-color;
-  @include box-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.2), false);
+  @include box-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.1), false);
   transition: transform 0.3s ease;
 
   &.open {
