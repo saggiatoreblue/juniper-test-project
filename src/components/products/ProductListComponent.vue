@@ -67,7 +67,7 @@ export default Vue.extend({
 .product-list-component {
   max-width: 1280px;
   margin: auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 4rem;
   min-width: 340px;
 }
 

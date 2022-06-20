@@ -4,31 +4,33 @@
     class="product-details-component"
     :class="toggleDetails ? 'open' : ''"
   >
-    <div class="close-icon" v-html="closeIcon" @click="onCloseDetails" />
+    <div class="product-details-wrapper">
+      <div class="close-icon" v-html="closeIcon" @click="onCloseDetails" />
 
-    <h1>Product Details</h1>
-    <ul class="product-details">
-      <li v-for="(value, key, i) in productDetails" :key="i">
-        <div v-if="value">
-          <span class="bold">{{ key | toTitleCase }}:&nbsp;</span>
-          <span v-if="key === 'basePrice'">{{ value | toUSDollar }}</span>
-          <span v-else>{{ value }}</span>
-        </div>
-      </li>
-    </ul>
+      <h1>Product Details</h1>
+      <ul class="product-details">
+        <li v-for="(value, key, i) in productDetails" :key="i">
+          <div v-if="value">
+            <span class="bold">{{ key | toTitleCase }}:&nbsp;</span>
+            <span v-if="key === 'basePrice'">{{ value | toUSDollar }}</span>
+            <span v-else>{{ value }}</span>
+          </div>
+        </li>
+      </ul>
 
-    <h1>Contact Information</h1>
-    <ul class="contact-details">
-      <li v-for="(value, key, i) in salesRep" :key="i">
-        <div v-if="value">
-          <span class="bold">{{ key | toTitleCase }}:&nbsp;</span>
-          <span v-if="key === 'cellPhone' || key === 'phone'">{{
-            value | toUSPhoneNumber
-          }}</span>
-          <span v-else>{{ value }}</span>
-        </div>
-      </li>
-    </ul>
+      <h1>Contact Information</h1>
+      <ul class="contact-details">
+        <li v-for="(value, key, i) in salesRep" :key="i">
+          <div v-if="value">
+            <span class="bold">{{ key | toTitleCase }}:&nbsp;</span>
+            <span v-if="key === 'cellPhone' || key === 'phone'">{{
+              value | toUSPhoneNumber
+            }}</span>
+            <span v-else>{{ value }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -120,22 +122,26 @@ export default Vue.extend({
   background: white;
   top: 0;
   z-index: 9;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 1rem;
   border-left: 1px solid $grey-color;
   @include box-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.2), false);
   transition: transform 0.3s ease;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 
   &.open {
     transform: translateX(0%);
   }
 
+  .product-details-wrapper {
+    height: auto;
+    overflow: hidden;
+    top: 0;
+    position: sticky;
+  }
+
   .close-icon {
     position: absolute;
     top: 0.8rem;
-    right: 0.8rem;
+    right: 0;
     cursor: pointer;
   }
 
