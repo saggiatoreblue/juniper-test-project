@@ -4,6 +4,7 @@ import state from "../../src/store/state";
 const salesRep: object = state.salesRep;
 const manufacturerId: string = state.manufacturerId;
 const companyDetails: object = state.companyDetails;
+const products: object = state.products;
 
 describe("getters", () => {
   it("returns sales rep data", () => {
@@ -17,5 +18,9 @@ describe("getters", () => {
   it("returns the company details", () => {
     const actual = getters.getCompanyDetails(state);
     expect(actual).toEqual(companyDetails);
+  });
+  it("returns the list of products", () => {
+    const actual = getters.getProducts(state);
+    expect(actual).toEqual(products);
   });
 });
