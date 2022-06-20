@@ -39,7 +39,7 @@ export default Vue.extend({
   }
   a {
     text-decoration: none;
-    color: $secondary-color;
+    color: $text-color-default;
   }
   .small-txt {
     position: relative;

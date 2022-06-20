@@ -74,7 +74,7 @@ export default Vue.extend({
 .product-img-container {
   padding: 10px;
   border: 3px solid lighten($grey-color, 7%);
-  outline: 1px solid $tertiary-color-light;
+  outline: 1px solid $border-color;
   display: flex;
   align-items: center;
   justify-content: center;
