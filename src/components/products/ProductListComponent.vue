@@ -23,7 +23,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { mapActions } from "vuex";
 
 export default Vue.extend({
   name: "ProductListComponent",
@@ -41,23 +40,21 @@ export default Vue.extend({
   },
 
   methods: {
-    ...mapActions(["setToggleDetails", "setSelectedProductId"]),
-
     toggleDetails(e): void {
       const details = document.getElementById("product-details");
       document.querySelectorAll(".product-img-wrap").forEach((el) => {
         if (el.id !== e.target.id) el.classList.remove("active");
       });
       e.target.classList.toggle("active");
-      this.setSelectedProductId(e.target.id);
+      this.$store.dispatch("setSelectedProductId", e.target.id);
       if (
         this.selectedProduct.id !== e.target.id &&
         details &&
         !details.classList.contains("open")
       ) {
-        this.setToggleDetails();
+        this.$store.dispatch("setToggleDetails");
       } else if (this.selectedProduct.id === e.target.id) {
-        this.setToggleDetails();
+        this.$store.dispatch("setToggleDetails");
       }
 
       this.selectedProduct = e.target;

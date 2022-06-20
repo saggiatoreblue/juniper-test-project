@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { mapActions, mapGetters, mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 import { ProductDetails } from "@/classes/products/ProductDetails";
 import { SalesRep } from "@/classes/products/SalesRep";
 
@@ -65,7 +65,7 @@ export default Vue.extend({
   },
 
   computed: {
-    ...mapGetters(["getToggleDetails", "getSalesRep"]),
+    ...mapGetters(["getSalesRep"]),
     ...mapState(["toggleDetails", "selectedProductId", "products"]),
   },
 
@@ -100,14 +100,11 @@ export default Vue.extend({
   },
 
   methods: {
-    ...mapActions(["setToggleDetails"]),
-    onCloseDetails() {
-      const els = document
-        .querySelectorAll(".product-img-wrap")
-        .forEach((element) => {
-          element.classList.remove("active");
-        });
-      this.setToggleDetails();
+    onCloseDetails(): void {
+      document.querySelectorAll(".product-img-wrap").forEach((element) => {
+        element.classList.remove("active");
+      });
+      this.$store.dispatch("setToggleDetails");
     },
   },
 });
