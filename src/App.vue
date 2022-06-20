@@ -25,7 +25,6 @@ export default Vue.extend({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  padding-top: 137px;
-  padding-bottom: 50px;
+  position: relative;
 }
 </style>

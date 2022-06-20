@@ -135,6 +135,7 @@ $grey-color: #ddd;
 body {
   background: url('@/assets/images/bg.webp');
   width: 100%;
+  overflow-x: hidden;
 }
 
 .small-txt {

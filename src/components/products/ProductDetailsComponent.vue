@@ -114,20 +114,22 @@ export default Vue.extend({
 .product-details-component {
   height: 100%;
   width: 300px;
-  position: fixed;
-  right: -100%;
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
   background: white;
   top: 0;
   z-index: 9;
   padding: 0 1.5rem;
   border-left: 1px solid $grey-color;
   @include box-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.2), false);
-  transition: right 0.5s ease;
+  transition: transform 0.3s ease;
   @media (max-width: 768px) {
     width: 100%;
   }
+
   &.open {
-    right: 0;
+    transform: translateX(0%);
   }
 
   .close-icon {

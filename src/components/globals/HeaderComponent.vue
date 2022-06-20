@@ -24,7 +24,6 @@ export default Vue.extend({
   border-bottom: 1px solid $grey-color;
   position: sticky;
   background: white;
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 9;
