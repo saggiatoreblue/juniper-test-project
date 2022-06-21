@@ -116,9 +116,9 @@ export default Vue.extend({
 .product-details-component {
   height: 100%;
   width: 300px;
-  position: absolute;
-  right: 0;
-  transform: translateX(100%);
+  position: fixed;
+  left: 0;
+  transform: translateX(-100%);
   background: white;
   top: 0;
   z-index: 9;
@@ -126,6 +126,7 @@ export default Vue.extend({
   border-left: 1px solid $grey-color;
   @include box-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.1), false);
   transition: transform 0.3s ease;
+  overflow: auto;
 
   &.open {
     transform: translateX(0%);

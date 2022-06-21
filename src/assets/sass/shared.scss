@@ -66,6 +66,7 @@ video {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
+  box-sizing: border-box;
 }
 
 footer,

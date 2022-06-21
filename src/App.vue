@@ -25,6 +25,5 @@ export default Vue.extend({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $text-color-default;
-  position: relative;
 }
 </style>
