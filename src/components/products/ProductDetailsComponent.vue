@@ -18,18 +18,20 @@
         </li>
       </ul>
 
-      <h1>Contact Information</h1>
-      <ul class="contact-details">
-        <li v-for="(value, key, i) in salesRep" :key="i">
-          <div v-if="value">
-            <span class="bold">{{ key | toTitleCase }}:&nbsp;</span>
-            <span v-if="key === 'cellPhone' || key === 'phone'">{{
-              value | toUSPhoneNumber
-            }}</span>
-            <span v-else>{{ value }}</span>
-          </div>
-        </li>
-      </ul>
+      <div v-if="salesRep">
+        <h1>Contact Information</h1>
+        <ul class="contact-details">
+          <li v-for="(value, key, i) in salesRep" :key="i">
+            <div v-if="value">
+              <span class="bold">{{ key | toTitleCase }}:&nbsp;</span>
+              <span v-if="key === 'cellPhone' || key === 'phone'">{{
+                value | toUSPhoneNumber
+              }}</span>
+              <span v-else>{{ value }}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
