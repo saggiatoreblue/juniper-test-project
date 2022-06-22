@@ -7,11 +7,23 @@
           :key="product.ProductID"
           class="col-lg-3 col-sm-6 col-12"
         >
-          <div class="product-img-container" @click="toggleDetails">
+          <div
+            class="product-img-container"
+            v-if="product.PhotoName"
+            @click="toggleDetails"
+          >
             <div class="product-img-wrap" :id="product.ProductID">
               <img
                 class="product-image"
                 :src="`${product.PhotoName}?width=250&height=250&mode=canvas&anchor=middlecenter`"
+              />
+            </div>
+          </div>
+          <div class="product-img-container no-image" v-else>
+            <div class="product-img-wrap">
+              <img
+                class="product-image no-image"
+                src="@/assets/images/no-image.png"
               />
             </div>
           </div>
@@ -39,12 +51,6 @@ export default Vue.extend({
     products(): object[] {
       return this.getProducts;
     },
-  },
-
-  mounted() {
-    this.$root.$on("active-state", (state) => {
-      console.log(state);
-    });
   },
 
   methods: {
@@ -92,6 +98,9 @@ export default Vue.extend({
   background: white;
   position: relative;
   cursor: pointer;
+  &.no-image {
+    background: #f6f6f6;
+  }
 }
 
 .product-img-wrap {
@@ -101,6 +110,7 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:after {
     position: absolute;
     display: block;

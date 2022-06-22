@@ -106,7 +106,6 @@ export default Vue.extend({
       document.querySelectorAll(".product-img-wrap").forEach((element) => {
         element.classList.remove("active");
       });
-      this.$root.$emit("active-state", null);
       this.$store.dispatch("setToggleDetails");
     },
   },
