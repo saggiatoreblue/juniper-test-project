@@ -57,7 +57,7 @@ export default Vue.extend({
     toggleDetails(e): void {
       const details = document.getElementById("product-details");
 
-      document.querySelectorAll(".product-img-wrap").forEach((el) => {
+      document.querySelectorAll(".product-img-wrap").forEach(el => {
         if (el.id !== e.target.id) el.classList.remove("active");
       });
 
