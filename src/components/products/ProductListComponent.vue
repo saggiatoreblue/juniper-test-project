@@ -3,12 +3,16 @@
     <div>
       <ul id="products" class="grid">
         <li
-          v-for="product in products"
+          v-for="(product, i) in products"
           :key="product.ProductID"
           class="col-lg-3 col-sm-6 col-12"
         >
-          <div class="product-img-container" @click="toggleDetails">
-            <div class="product-img-wrap" :id="product.ProductID">
+          <div class="product-img-container" @click="toggleDetails($event, i)">
+            <div
+              class="product-img-wrap"
+              :id="product.ProductID"
+              :class="{ active: i === activeProduct }"
+            >
               <img
                 class="product-image"
                 :src="`${product.PhotoName}?width=250&height=250&mode=canvas&anchor=middlecenter`"
@@ -31,6 +35,7 @@ export default Vue.extend({
   data() {
     return {
       selectedProduct: document.createElement("div"),
+      activeProduct: null,
     };
   },
 
@@ -41,15 +46,16 @@ export default Vue.extend({
     },
   },
 
+  mounted() {
+    this.$root.$on("active-state", (state) => {
+      this.activeProduct = state;
+    });
+  },
+
   methods: {
-    toggleDetails(e): void {
+    toggleDetails(e, i): void {
       const details = document.getElementById("product-details");
-
-      document.querySelectorAll(".product-img-wrap").forEach((el) => {
-        if (el.id !== e.target.id) el.classList.remove("active");
-      });
-
-      e.target.classList.toggle("active");
+      this.activeProduct = this.activeProduct ? null : i;
       this.$store.dispatch("setSelectedProductId", e.target.id);
 
       if (
