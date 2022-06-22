@@ -25,8 +25,9 @@ export default Vue.extend({
   background: white;
   width: 100%;
   bottom: 0;
+  position: fixed;
   color: $text-color-default;
-  z-index: 9;
+  z-index: 1;
   @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.1));
 }
 </style>

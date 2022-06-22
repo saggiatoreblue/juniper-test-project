@@ -26,6 +26,6 @@ export default Vue.extend({
   background: white;
   top: 0;
   width: 100%;
-  z-index: 9;
+  z-index: 1;
 }
 </style>

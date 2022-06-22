@@ -117,11 +117,11 @@ export default Vue.extend({
   height: 100%;
   width: 300px;
   position: fixed;
-  left: 0;
-  transform: translateX(-100%);
+  right: 0;
+  transform: translateX(100%);
   background: white;
   top: 0;
-  z-index: 9;
+  z-index: 2;
   padding: 0 1.5rem 1rem;
   border-left: 1px solid $grey-color;
   @include box-shadow(0px, 0px, 10px, rgba(0, 0, 0, 0.1), false);
@@ -134,15 +134,12 @@ export default Vue.extend({
 
   .product-details-wrapper {
     height: auto;
-    overflow: hidden;
-    top: 0;
-    position: sticky;
   }
 
   .close-icon {
     position: absolute;
     top: 0.8rem;
-    right: 0;
+    right: 0.5rem;
     cursor: pointer;
   }
 
